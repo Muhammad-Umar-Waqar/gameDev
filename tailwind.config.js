@@ -7,10 +7,18 @@ module.exports = {
   ],
   theme: {
     extend: {
+      colors: {
+        'custom-blue': '#0D00A1',
+        'custom-purple': "#2A17F380",
+      },
       backgroundImage: {
         "gradient-radial": "radial-gradient(var(--tw-gradient-stops))",
         "gradient-conic":
           "conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))",
+      },
+      fontFamily: {
+        alata: ['Alata', 'sans-serif'],
+        poppins: ['Poppins', 'sans-serif'],
       },
     },
   },

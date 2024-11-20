@@ -2,6 +2,9 @@
 @tailwind components;
 @tailwind utilities;
 
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap');
+
+
 :root {
   --foreground-rgb: 0, 0, 0;
   --background-start-rgb: 214, 219, 220;
@@ -16,15 +19,36 @@
   }
 }
 
-body {
-  color: rgb(var(--foreground-rgb));
+/* body { */
+  /* color: rgb(var(--foreground-rgb));
   background: linear-gradient(
       to bottom,
       transparent,
       rgb(var(--background-end-rgb))
     )
-    rgb(var(--background-start-rgb));
+    rgb(var(--background-start-rgb)); */
+/* } */
+
+/* app/styles/globals.css */
+
+/* Define the custom font */
+@font-face {
+  font-family: 'Alata';
+  src: url('/fonts/Alata-Regular.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
 }
+
+/* Apply Alata font globally */
+.logo {
+  font-family: 'Alata', sans-serif;
+}
+
+
+body {
+  font-family: 'Poppins', sans-serif;
+}
+
 
 @layer utilities {
   .text-balance {
