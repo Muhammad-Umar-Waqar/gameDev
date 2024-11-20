@@ -8,7 +8,7 @@ function Welcome() {
     <div className="flex flex-col my-10 justify-center items-center px-2">
         <h1 className='logo text-[20px] leading-[27.6px] mb-[60px]'>ARCADE IOTFIY</h1>
         <h2 className='font-poppins font-bold text-[24px] leading-[36px] text-blue-600'>Welcome</h2>
-        <p className='text-gray-700  font-poppins font-light text-[15px] leading-[22.5px] '>&quot; Game on! Tap to Play!&quot; 🎮</p>
+        <p className='text-gray-700  font-poppins font-light text-[15px] leading-[22.5px] '>&quot;Game on! Tap to Play!&quot; 🎮</p>
        <CustomDropdown/>
        <div className='flex w-[278px] my-2 gap-1  justify-start flex-col'>
        <p className='font-light text-left text-xs leading-5'>
