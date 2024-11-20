@@ -12,7 +12,7 @@ function Welcome() {
        <CustomDropdown/>
        <div className='flex w-[278px] my-2 gap-1  justify-start flex-col'>
        <p className='font-light text-left text-xs leading-5'>
-        Coins Required: 054
+        Coins Required: 05
        </p>
        <p className='font-light text-left text-xs leading-5'>
         04 Coins = 1&#36;
