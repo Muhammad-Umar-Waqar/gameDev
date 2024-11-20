@@ -19,13 +19,13 @@ function Welcome() {
        </p>
        </div>
        <h1 className='font-extralight  mt-[20px]'>Choose your payment method</h1>
-       <div className='w-[250px] flex items-center justify-around my-10'>
+       <div className='w-[250px] flex items-center justify-around my-7'>
         <Image src="./GooglePay.svg" width={46}  height={46} alt='Google Payment Icon' />
         <Image src="./ApplePay.svg" width={46}  height={46} alt='Google Payment Icon' />
         <Image src="./BamBora.svg" width={46}  height={46} alt='Google Payment Icon' />
        </div>
         <h1 className='text-sm  font-extralight leading-[18px] text-center'>Tap pay to get started...</h1>
-        <button className="px-8 py-2 text-center text-lg text-white mt-[20px] bg-custom-purple rounded-[35px] border border-black">
+        <button className="px-8 py-2 text-center text-lg text-white mt-[30px] bg-custom-purple rounded-[35px] border border-black">
             Pay
         </button>
         <p className='text-sm font-light mt-[15px]  '>
