@@ -19,14 +19,14 @@ export default function CustomDropdown() {
     <div className="relative mt-[50px]">
       <button
         onClick={toggleDropdown}
-        className="p-2 bg-transparent shadow-lg border w-[287px] border-black rounded-xl text-left flex justify-between items-center"
+        className="p-2 bg-transparent shadow-lg border w-[287px] border-black rounded-xl text-left flex justify-between items-center transition-transform duration-300 ease-in-out"
       >
         <span className="font-light">
           {selectedGame ? selectedGame.charAt(0).toUpperCase() + selectedGame.slice(1) : "Game Name"}
         </span>
         <div className="flex items-center justify-center w-6 h-6 rounded-full border border-black">
           <svg
-            className="w-4 h-4 text-gray-600"
+            className={`w-4 h-4 text-gray-600 transition-transform duration-300 ease-in-out ${isOpen ? "rotate-180" : ""}`}
             xmlns="http://www.w3.org/2000/svg"
             viewBox="0 0 20 20"
             fill="currentColor"
@@ -41,42 +41,44 @@ export default function CustomDropdown() {
         </div>
       </button>
 
-      {isOpen && (
-        <ul className="absolute left-0 right-0 mt-2 bg-white border border-gray-300 rounded-md shadow-lg z-10">
-          {!selectedGame && (
-            <li
-              className="p-2 cursor-not-allowed text-gray-400"
-              onClick={(e) => e.preventDefault()}
-            >
-              Game Name
-            </li>
-          )}
+      {/* Smooth transition for dropdown */}
+      <ul
+        className={`absolute left-0 right-0 mt-2 bg-white border border-gray-300 rounded-md shadow-lg z-10 transition-all duration-300 ease-in-out ${isOpen ? "max-h-[200px] opacity-100" : "max-h-0 opacity-0"}`}
+        style={{ overflow: 'hidden' }}
+      >
+        {!selectedGame && (
           <li
-            className="p-2 cursor-pointer hover:bg-gray-100"
-            onClick={() => selectOption("volvo")}
+            className="p-2 cursor-not-allowed text-gray-400"
+            onClick={(e) => e.preventDefault()}
           >
-            Volvo
+            Game Name
           </li>
-          <li
-            className="p-2 cursor-pointer hover:bg-gray-100"
-            onClick={() => selectOption("saab")}
-          >
-            Saab
-          </li>
-          <li
-            className="p-2 cursor-pointer hover:bg-gray-100"
-            onClick={() => selectOption("opel")}
-          >
-            Opel
-          </li>
-          <li
-            className="p-2 cursor-pointer hover:bg-gray-100"
-            onClick={() => selectOption("audi")}
-          >
-            Audi
-          </li>
-        </ul>
-      )}
+        )}
+        <li
+          className="p-2 cursor-pointer hover:bg-gray-100"
+          onClick={() => selectOption("volvo")}
+        >
+          Volvo
+        </li>
+        <li
+          className="p-2 cursor-pointer hover:bg-gray-100"
+          onClick={() => selectOption("saab")}
+        >
+          Saab
+        </li>
+        <li
+          className="p-2 cursor-pointer hover:bg-gray-100"
+          onClick={() => selectOption("opel")}
+        >
+          Opel
+        </li>
+        <li
+          className="p-2 cursor-pointer hover:bg-gray-100"
+          onClick={() => selectOption("audi")}
+        >
+          Audi
+        </li>
+      </ul>
     </div>
   );
 }
