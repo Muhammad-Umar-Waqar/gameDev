@@ -11,7 +11,8 @@ import AddIcon from '@mui/icons-material/Add';
 
 export default function AddDeviceSpeedDial() {
   const [anchorEl, setAnchorEl] = useState(null);
-  const [deviceMac, setDeviceMac] = useState('');
+  const [deviceID, setDeviceID] = useState('');
+  const [devicePort, setDevicePort] = useState('');
 
   const handleOpenPopover = (event) => {
     setAnchorEl(event.currentTarget);
@@ -19,12 +20,15 @@ export default function AddDeviceSpeedDial() {
 
   const handleClosePopover = () => {
     setAnchorEl(null);
-    setDeviceMac(''); // Clear input after closing
+    setDeviceID(''); // Clear input after closing
+    setDevicePort('');
   };
 
   const handleSave = () => {
-    console.log('Device MAC Address:', deviceMac);
-    alert(`Device MAC Address Saved: ${deviceMac}`);
+    console.log('Device ID:', deviceID);
+    console.log('Device PORT:', devicePort);
+    alert(`Device ID Saved: ${deviceID}`);
+    alert(`Device PORT Saved: ${devicePort}`);
     handleClosePopover();
   };
 
@@ -58,8 +62,8 @@ export default function AddDeviceSpeedDial() {
             fullWidth
             label="Device ID"
             variant="outlined"
-            value={deviceMac}
-            onChange={(e) => setDeviceMac(e.target.value)}
+            value={deviceID}
+            onChange={(e) => setDeviceID(e.target.value)}
             sx={{ mb: 2 }}
           />
 
@@ -67,8 +71,8 @@ export default function AddDeviceSpeedDial() {
             fullWidth
             label="Device Port"
             variant="outlined"
-            value={deviceMac}
-            onChange={(e) => setDeviceMac(e.target.value)}
+            value={devicePort}
+            onChange={(e) => setDevicePort(e.target.value)}
             sx={{ mb: 2 }}
           />
           <Box display="flex" justifyContent="flex-end" gap={1}>
