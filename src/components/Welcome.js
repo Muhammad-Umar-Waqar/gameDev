@@ -10,14 +10,7 @@ function Welcome() {
         <h2 className='font-poppins font-bold text-[24px] leading-[36px] text-blue-600'>Welcome</h2>
         <p className='text-gray-700  font-poppins font-light text-[15px] leading-[22.5px] '>&quot;Game on! Tap to Play!&quot; 🎮</p>
        <CustomDropdown/>
-       <div className='flex w-[278px] my-2 gap-1  justify-start flex-col'>
-       <p className='font-light text-left text-xs leading-5'>
-        Coins Required: 05
-       </p>
-       <p className='font-light text-left text-xs leading-5'>
-        04 Coins = 1&#36;
-       </p>
-       </div>
+      
        <h1 className='font-extralight  mt-[20px]'>Choose your payment method</h1>
        <div className='w-[250px] flex items-center justify-around my-7'>
         <Image src="./GooglePay.svg" width={46}  height={46} alt='Google Payment Icon' />
