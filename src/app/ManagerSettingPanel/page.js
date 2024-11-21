@@ -1,12 +1,11 @@
 'use client'
 
-import Link from 'next/link';
 import React, { useState } from 'react';
 
 import DeviceList from '@/components/Manager/Devicelist';
 import AddDeviceSpeedDial from '@/components/Manager/Adddevice';
 
-function page() {
+function Page() {
 
   const [isSidebarVisible, setSidebarVisible] = useState(true);
 
@@ -53,4 +52,4 @@ function page() {
   )
 }
 
-export default page;
+export default Page;
