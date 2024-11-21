@@ -28,7 +28,7 @@ function Page() {
           <div>
             <DeviceList />
           </div>
-          <div className={`fixed bottom-[3%]  ${isSidebarVisible ? "right-[50%] left-[50%]" : "right-[1%]"}`}>
+          <div className={`fixed bottom-[6%]  ${isSidebarVisible ? "right-[50%] left-[50%]" : "right-[1%]"}`}>
             <AddDeviceSpeedDial />
           </div>
         </div>
