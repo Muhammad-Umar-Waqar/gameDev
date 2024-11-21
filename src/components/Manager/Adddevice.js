@@ -34,9 +34,10 @@ export default function AddDeviceSpeedDial() {
     <Box sx={{ position: 'relative' }}>
       <SpeedDial
         ariaLabel="Add New Device"
-        icon={<SpeedDialIcon  openIcon={<AddIcon />} />}
+        icon={<SpeedDialIcon  openIcon={<AddIcon  />} />}
         onClick={handleOpenPopover}
-        
+        className="text-xs scale-75"
+       
       />
 
       <Popover
@@ -53,12 +54,18 @@ export default function AddDeviceSpeedDial() {
         }}
       >
         <Box sx={{ p: 2, width: 300 }}>
-          <Typography variant="h6" gutterBottom>
-            Enter Device MAC Address
-          </Typography>
           <TextField
             fullWidth
-            label="MAC Address"
+            label="Device ID"
+            variant="outlined"
+            value={deviceMac}
+            onChange={(e) => setDeviceMac(e.target.value)}
+            sx={{ mb: 2 }}
+          />
+
+          <TextField
+            fullWidth
+            label="Device Port"
             variant="outlined"
             value={deviceMac}
             onChange={(e) => setDeviceMac(e.target.value)}
@@ -69,7 +76,7 @@ export default function AddDeviceSpeedDial() {
               Cancel
             </Button>
             <Button variant="contained" onClick={handleSave}>
-              Save
+              Create
             </Button>
           </Box>
         </Box>

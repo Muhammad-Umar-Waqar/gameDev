@@ -24,12 +24,12 @@ function Page() {
         id="default-sidebar"
         aria-label="Sidebar"
       >
-        <div className="h-full mt-[120px] px-3 py-4 overflow-y-auto dark:bg-gray-800">
-          <div className={`fixed top-12  ${isSidebarVisible ? "right-[50%] left-[50%]" : "right-[1%]"}`}>
-            <AddDeviceSpeedDial />
-          </div>
+        <div className="h-full mt-[50px] px-3 py-4 overflow-y-auto dark:bg-gray-800">
           <div>
             <DeviceList />
+          </div>
+          <div className={`fixed bottom-[1%]  ${isSidebarVisible ? "right-[50%] left-[50%]" : "right-[1%]"}`}>
+            <AddDeviceSpeedDial />
           </div>
         </div>
       </aside>
