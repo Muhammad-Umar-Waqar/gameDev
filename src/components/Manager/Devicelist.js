@@ -53,9 +53,9 @@ const handleDeviceClick = (device) =>{
   return (
     <div className="device-list">
    {devices.map((device) => (
-  <li key={device.id} className="list-none">
+  <li key={device.id} className="list-none my-2">
     <button
-      className="flex hover:bg-gray-100  focus:bg-gray-200  items-center justify-between w-full p-2 text-gray-900 rounded-lg dark:text-white hover:backdrop-blur-lg dark:hover:bg-gray-700 group"
+      className="flex  hover:bg-gray-100  focus:bg-gray-200  items-center justify-between w-full p-2 text-gray-900 rounded-lg dark:text-white hover:backdrop-blur-lg dark:hover:bg-gray-700 group"
       onClick={() => handleDeviceClick(device)}  // Custom click handler
       aria-label={`${device.status === "on" ? "Turn off" : "Turn on"} ${device.name}`}
     >

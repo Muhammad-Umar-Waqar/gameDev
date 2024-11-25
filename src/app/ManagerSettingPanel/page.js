@@ -4,6 +4,7 @@ import React, { useState } from 'react';
 
 import DeviceList from '@/components/Manager/Devicelist';
 import AddDeviceSpeedDial from '@/components/Manager/Adddevice';
+import SignIn from '@/components/Manager/SigninManager';
 
 function Page() {
 
@@ -14,6 +15,7 @@ function Page() {
   };
 
   return (
+    <div>
     <div className="relative">
       {/* Sidebar */}
       <aside
@@ -29,6 +31,7 @@ function Page() {
             <DeviceList />
           </div>
           <div className={`fixed bottom-[8%]  ${isSidebarVisible ? "right-[50%] left-[50%]" : "right-[1%]"}`}>
+          
             <AddDeviceSpeedDial />
           </div>
         </div>
@@ -48,6 +51,8 @@ function Page() {
           <path clip-rule="evenodd" fill-rule="evenodd" d="M2 4.75A.75.75 0 012.75 4h14.5a.75.75 0 010 1.5H2.75A.75.75 0 012 4.75zm0 10.5a.75.75 0 01.75-.75h7.5a.75.75 0 010 1.5h-7.5a.75.75 0 01-.75-.75zM2 10a.75.75 0 01.75-.75h14.5a.75.75 0 010 1.5H2.75A.75.75 0 012 10z"></path>
         </svg>
       </button>
+    </div>
+    <SignIn/>
     </div>
   )
 }

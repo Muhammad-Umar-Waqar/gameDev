@@ -11,8 +11,10 @@ import AddIcon from '@mui/icons-material/Add';
 
 export default function AddDeviceSpeedDial() {
   const [anchorEl, setAnchorEl] = useState(null);
-  const [deviceID, setDeviceID] = useState('');
-  const [devicePort, setDevicePort] = useState('');
+  const [deviceDetails, setDeviceDetails] = useState({
+    id : "",
+    port : "",
+  });
 
   const handleOpenPopover = (event) => {
     setAnchorEl(event.currentTarget);
@@ -20,15 +22,13 @@ export default function AddDeviceSpeedDial() {
 
   const handleClosePopover = () => {
     setAnchorEl(null);
-    setDeviceID(''); // Clear input after closing
-    setDevicePort('');
+    setDeviceDetails({id : "", port : "",});
   };
 
   const handleSave = () => {
-    console.log('Device ID:', deviceID);
-    console.log('Device PORT:', devicePort);
-    alert(`Device ID Saved: ${deviceID}`);
-    alert(`Device PORT Saved: ${devicePort}`);
+    console.log('Device ID:', deviceDetails.id);
+    console.log('Device PORT:', deviceDetails.port);
+    alert(`Device ID: ${deviceDetails.id} Device port: ${deviceDetails.port}`);
     handleClosePopover();
   };
 
@@ -36,6 +36,7 @@ export default function AddDeviceSpeedDial() {
 
   return (
     <Box sx={{ position: 'relative' }}>
+        
       <SpeedDial
         ariaLabel="Add New Device"
         icon={<SpeedDialIcon  openIcon={<AddIcon  />} />}
@@ -62,8 +63,8 @@ export default function AddDeviceSpeedDial() {
             fullWidth
             label="Device ID"
             variant="outlined"
-            value={deviceID}
-            onChange={(e) => setDeviceID(e.target.value)}
+            value={deviceDetails.id}
+            onChange={(e) => setDeviceDetails((prev)=> ({...prev, id:e.target.value}))}
             sx={{ mb: 2 }}
           />
 
@@ -71,8 +72,8 @@ export default function AddDeviceSpeedDial() {
             fullWidth
             label="Device Port"
             variant="outlined"
-            value={devicePort}
-            onChange={(e) => setDevicePort(e.target.value)}
+            value={deviceDetails.port}
+            onChange={(e)=> setDeviceDetails((prev)=> ({...prev, port: e.target.value}))}
             sx={{ mb: 2 }}
           />
           <Box display="flex" justifyContent="flex-end" gap={1}>
