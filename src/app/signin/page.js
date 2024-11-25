@@ -2,7 +2,7 @@
 import Image from 'next/image'
 import React, { useState } from 'react'
 
-function page() {
+function Page() {
     const [formData, setFormData] = useState({ username: '', password: '' });
 
     const handleLogin = () => {
@@ -59,4 +59,4 @@ function page() {
     )
 }
 
-export default page
+export default Page
