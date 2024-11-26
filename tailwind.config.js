@@ -12,6 +12,7 @@ module.exports = {
         'custom-purple': "#2A17F380",
         'custom-headblue' : "#2C509A",
         'custom-buttoncolor' : "#5153FF",
+        'custom-bgcolor' : "#E6E4FF80",
       },
       backgroundImage: {
         "gradient-radial": "radial-gradient(var(--tw-gradient-stops))",
