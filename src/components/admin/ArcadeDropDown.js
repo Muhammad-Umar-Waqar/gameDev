@@ -33,7 +33,7 @@ export default function GameSelection() {
       <div className="relative col-span-2">
         <div
           onClick={() => setDropdownOpen(!dropdownOpen)}
-          className="border border-gray-300 rounded-full p-2 cursor-pointer bg-white"
+          className="border border-black relative rounded-full p-2 cursor-pointer bg-white"
         >
           <span className="text-gray-600 font-medium">
             {selectedGames.length > 0
@@ -41,7 +41,7 @@ export default function GameSelection() {
               : 'Select options'}
           </span>
           <svg
-            className="w-4 h-4 text-gray-500 inline-block float-right "
+            className="absolute top-3 right-1 w-4 h-4 text-gray-500 inline-block float-right "
             fill="none"
             stroke="currentColor"
             viewBox="0 0 24 24"
