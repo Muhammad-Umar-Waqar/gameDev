@@ -27,9 +27,9 @@ function Page() {
             <h1 className='text-xl font-bold my-5'>App Management</h1>
 
             {/* ARCADE LIST */}
-
-          <div className='flex items-center justify-center '>
-            <div className="max-h-[80vh] min-h-[60vh] min-w-[30vw]  max-w-[40vw]  overflow-y-auto bg-white  rounded-xl shadow-md">
+<div className='xl:max-w-[70vw] mx-auto'>
+          <div className='grid place-items-center  md:grid-cols-2 grid-cols-1 gap-5 '>
+            <div className="max-h-[80vh] min-h-[60vh] md:min-w-[30vw] min-w-[80vw]  max-w-[40vw]  overflow-y-auto bg-white  rounded-xl shadow-md">
             <h2 className="text-lg text-center pt-5 text-custom-headblue font-bold  border-2 border-b-custom-headblue ">Arcade List</h2>
             <ul className="">
                 {arcadeList.map((arcade) => (
@@ -62,7 +62,7 @@ function Page() {
           
 
 <div className='flex flex-col items-center justify-center '>
-        <form className="ml-[20px] flex flex-col items-center justify-center space-y-6 w-[500px] rounded-lg shadow-md bg-white p-6">
+        <form className="sm:ml-[20px] flex flex-col items-center justify-center space-y-6  w-[260px] sm:w-[400px] md:w-[500px] rounded-lg shadow-md bg-white p-6">
     {/* Form Title */}
     <h1 className="text-start w-full text-2xl font-bold text-custom-blue mb-4">
         Add Arcade
@@ -116,11 +116,11 @@ function Page() {
 </form>
 
 
-<div className='bg-white border border-black rounded-xl p-5  mt-7'>
+<div className='bg-white border border-black rounded-xl p-5  mt-7 sm:w-auto w-[270px]'>
   <h1 className='text-custom-headblue font-bold '>API Key:</h1>
-  <div className="flex items-center justify-between gap-x-10">
-  <p className='text-start'>38943748fds32498h2348dasdja2938</p>
-  <Image src="/QrCode.svg" height={80} width={80} />
+  <div className="flex items-center justify-between gap-x-2 sm:gap-x-5 lg:gap-x-10  ">
+  <p className='text-start sm:text-md text-sm'>38943748fds32498h2348das8</p>
+  <Image src="/QrCode.svg" height={80} width={80} className='sm:w-[80px] sm:h-[80px] h-[40px] w-[40px]'/>
   </div>
 
 </div>
@@ -128,6 +128,7 @@ function Page() {
 </div>
 
 
+    </div>
     </div>
     </div>
   )

@@ -31,22 +31,22 @@ function Layout({ children }) {
         {
             name: "Dashboard",
             id: "dashboard",
-            imageUrl: "/time.svg", // Replace with actual path to your image
+            imageUrl: "/time.svg", 
         },
         {
             name: "Manager Management",
             id: "manager-management",
-            imageUrl: "/Manager.svg", // Replace with actual path to your image
+            imageUrl: "/Manager.svg", 
         },
         {
             name: "Arcade Management",
             id: "arcade-management",
-            imageUrl: "/JoyStick.svg", // Replace with actual path to your image
+            imageUrl: "/JoyStick.svg", 
         },
         {
             name: "Game Management",
             id: "game-management",
-            imageUrl: "/controller.svg", // Replace with actual path to your image
+            imageUrl: "/controller.svg", 
         }
     ]
 
@@ -63,9 +63,9 @@ function Layout({ children }) {
             <div className="relative">
                 {/* Sidebar */}
                 <aside
-                    className={`fixed shadow-lg bg-opacity-70 top-0 left-0 z-40 h-screen 
+                    className={`fixed  shadow-lg bg-opacity-70 top-0 left-0 z-40 h-screen 
                     transition-all duration-300 ease-in-out rounded-2xl
-                    ${isSidebarVisible ? "w-[260px]" : "w-[60px]"} 
+                    ${isSidebarVisible ? "w-[270px]" : "w-[60px]"} 
                     bg-custom-blue`}
                     id="default-sidebar"
                     aria-label="Sidebar"
@@ -73,38 +73,49 @@ function Layout({ children }) {
                     onMouseLeave={handleMouseLeave}
                 >
 
-                    <div className="h-full mt-[50px] px-3 py-4 overflow-y-auto dark:bg-gray-800">
-                        <div>
+                    <div className="h-full mt-[50px] px-3 py-4 overflow-x-hidden dark:bg-gray-800">
+                    
                             <div className="menu-list  mt-[100px]">
-                                <Image src="/IotIcon.svg" height={32} width={32} alt="IOTFIY ICON" className={`fixed ${isSidebarVisible ? "top-[80px]" : "top-[130px]"}`}/>
+                                <Image src="/IotIcon.svg" height={32} width={32} alt="IOTFIY ICON" className={`fixed top-[120px]`}/>
                                 {menuItems.map((menuItem) => (
                                     <li key={menuItem.id} className="list-none my-2">
                                         <button
-                                            className="flex items-center justify-start w-full my-[50px] text-gray-900 rounded-lg dark:text-white hover:backdrop-blur-lg dark:hover:bg-gray-700 group"
+                                            className="flex items-center justify-start  my-[50px] text-gray-900 rounded-lg dark:text-white hover:backdrop-blur-lg dark:hover:bg-gray-700 group"
                                             onClick={() => handleMenuClick(menuItem)} // Custom click handler
                                             aria-label={`Navigate to ${menuItem.name}`}
                                         >
                                             {/* Menu Item Image */}
-                                            <img
+                                            <Image
                                                 src={menuItem.imageUrl}
                                                 alt={menuItem.name}
-                                                className="w-8 h-8 mr-3"
+                                                className='mr-3'
+                                                height={28}
+                                                width={28}
                                             />
                                             {/* Menu Item Name */}
-                                            <div className="ms-3 whitespace-nowrap text-white text-md">{menuItem.name}</div>
+                                            <div className={`ms-3 whitespace-nowrap text-white text-md transition-all duration-900 delay-900 ${
+                                        isSidebarVisible ? "opacity-100 visible" : "opacity-0 invisible"
+                                    }`}>{menuItem.name}</div>
                                         </button>
                                     </li>
                                 ))}
-                                <button className="flex items-center fixed bottom-5 ">
+                                <button className="flex items-center fixed bottom-5  ">
                                     <img src="/Logout.svg" className="w-7 h-7 mr-2 ml-1" />
-                                    <div className="ms-3 whitespace-nowrap text-white">Logout</div>
+                                    <div
+                                    className={`ms-3 whitespace-nowrap text-white transition-all duration-900 delay-900 ${
+                                        isSidebarVisible ? "opacity-100 visible" : "opacity-0 invisible"
+                                    }`}
+                                >
+                                    Logout
+                                </div>
+
                                 </button>
                             </div>
-                        </div>
+                        
                     </div>
                 </aside>
             </div>
-            <div className={`${isSidebarVisible ? "ml-[280px]" : "ml-[80px]"} transition-all duration-300`} >
+            <div className={`${isSidebarVisible ? "ml-[270px]" : "ml-[80px]"} transition-all duration-300`} >
                 {children}
             </div>
         </div>
@@ -112,3 +123,19 @@ function Layout({ children }) {
 }
 
 export default Layout;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
