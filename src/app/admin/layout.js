@@ -100,7 +100,7 @@ function Layout({ children }) {
                                     </li>
                                 ))}
                                 <button className="flex items-center fixed bottom-5  ">
-                                    <img src="/Logout.svg" className="w-7 h-7 mr-2 ml-1" />
+                                    <Image src="/Logout.svg" height={7} width={7} className="mr-2 ml-1" />
                                     <div
                                     className={`ms-3 whitespace-nowrap text-white transition-all duration-900 delay-900 ${
                                         isSidebarVisible ? "opacity-100 visible" : "opacity-0 invisible"
