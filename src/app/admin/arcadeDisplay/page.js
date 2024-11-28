@@ -1,6 +1,8 @@
 'use client'
 
 import GameSelection from '@/components/admin/ArcadeDropDown';
+import ArcadeList from '@/components/admin/ArcadeList';
+import CustomDropdownVenue from '@/components/admin/VenuesDropDown';
 import Image from 'next/image';
 import React from 'react'
 
@@ -20,44 +22,16 @@ function Page() {
 ];
 
 
-
+  const title="Arcade List";
 
   return (
-    <div className="my-5">
-            <h1 className='text-xl font-bold my-5'>App Management</h1>
+    <div className="">
+            <h1 className='text-xl font-bold my-3'>App Management</h1>
 
             {/* ARCADE LIST */}
 <div className='xl:max-w-[70vw] mx-auto'>
           <div className='grid place-items-center  md:grid-cols-2 grid-cols-1 gap-5 '>
-            <div className="max-h-[80vh] min-h-[60vh] md:min-w-[30vw] min-w-[70vw]  max-w-[40vw]  overflow-y-auto bg-white  rounded-xl shadow-md">
-            <h2 className="text-lg text-center pt-5 text-custom-headblue font-bold  border-2 border-b-custom-headblue ">Arcade List</h2>
-            <ul className="">
-                {arcadeList.map((arcade) => (
-                    <li
-                        key={arcade.id}
-                        className="flex justify-between items-center bg-white border border-b-black p-3  shadow hover:bg-gray-100"
-                    >
-                        <span>{arcade.name}</span>
-                        <div className="flex space-x-2">
-                            {/* Settings Icon */}
-                            <button
-                                className="text-blue-500 hover:text-blue-700"
-                                onClick={() => console.log(`Settings for ${arcade.name}`)}
-                            >
-                                <Image src="/Delete.svg"  height={32} width={32} />
-                            </button>
-                            {/* Delete Icon */}
-                            <button
-                                className="text-red-500 hover:text-red-700"
-                                onClick={() => console.log(`Delete ${arcade.name}`)}
-                            >
-                                <Image src="/Setting.svg" height={32} width={32} />
-                            </button>
-                        </div>
-                    </li>
-                ))}
-            </ul>
-        </div>
+           <ArcadeList arcadeList={arcadeList} title={title} />
         {/* FORM */}
           
 
@@ -71,7 +45,7 @@ function Page() {
     {/* First Field */}
     <div className="grid grid-cols-3 items-center gap-4 w-full">
         <label htmlFor="arcade1" className="text-left font-medium text-gray-700">
-            Arcade ID:
+            Arcade ID
         </label>
         <input
             type="text"
@@ -84,19 +58,32 @@ function Page() {
     {/* Second Field */} 
     <div className="grid grid-cols-3 items-center gap-4 w-full">
         <label htmlFor="arcade2" className="text-left font-medium text-gray-700">
-            Arcade Name:
+            Coins Required
         </label>
         <input
-            type="text"
-            id="arcade2"
-            name="arcade2"
-            className="p-2 border border-black  focus:outline-none rounded-full col-span-2"
-         placeholder='Enter Text'   
-        />
+  type="number"
+  id="arcade2"
+  name="arcade2"
+  className="p-2 border border-black focus:outline-none rounded-full col-span-2"
+  placeholder="Enter Numbers"
+  pattern="^\d+$" // Regex to only allow digits
+  inputMode="numeric" // Suggests numeric keyboard on mobile
+  onInput={(e) => {
+    // Remove any non-digit characters
+    e.target.value = e.target.value.replace(/[^0-9]/g, '');
+  }}
+/>
+
     </div>
 
     {/* Third Field */}
    <GameSelection/>
+
+   {/* Fourth */}
+{/* Fourth */}
+<CustomDropdownVenue/>
+
+  
     {/* Buttons */}
     <div className="flex justify-end w-full space-x-4">
 
@@ -115,8 +102,7 @@ function Page() {
     </div>
 </form>
 
-
-<div className='bg-white border border-black rounded-xl p-5  mt-7 sm:w-auto w-[250px]'>
+<div className='bg-white border border-black rounded-xl p-5  mt-7 sm:w-[400px] w-[250px] '>
   <h1 className='text-custom-headblue font-bold '>API Key:</h1>
   <div className="flex items-center justify-between gap-x-2 sm:gap-x-5 lg:gap-x-10  ">
   <p className='text-start sm:text-md text-sm'>38943748fds32498h2348</p>
