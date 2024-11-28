@@ -1,6 +1,7 @@
 'use client'
 
 import Image from 'next/image';
+import Link from 'next/link';
 import React, { useState, useEffect } from 'react';
 
 
@@ -37,16 +38,20 @@ function Layout({ children }) {
             name: "Manager Management",
             id: "manager-management",
             imageUrl: "/Manager.svg", 
+            source:"/admin/ManagerManagement"
         },
         {
             name: "Arcade Management",
             id: "arcade-management",
-            imageUrl: "/JoyStick.svg", 
+            imageUrl: "/JoyStick.svg",
+            source: "/admin/arcadeDisplay",
+            
         },
         {
             name: "Game Management",
             id: "game-management",
             imageUrl: "/controller.svg", 
+            source: "/admin/gameManagement"
         }
     ]
 
@@ -79,7 +84,7 @@ function Layout({ children }) {
                                 <Image src="/IotIcon.svg" height={32} width={32} alt="IOTFIY ICON" className={`fixed top-[120px]`}/>
                                 {menuItems.map((menuItem) => (
                                     <li key={menuItem.id} className="list-none my-2">
-                                        <button
+                                        <Link href={String(menuItem.source)}
                                             className="flex items-center justify-start  my-[50px] text-gray-900 rounded-lg dark:text-white hover:backdrop-blur-lg dark:hover:bg-gray-700 group"
                                             onClick={() => handleMenuClick(menuItem)} // Custom click handler
                                             aria-label={`Navigate to ${menuItem.name}`}
@@ -96,7 +101,7 @@ function Layout({ children }) {
                                             <div className={`ms-3 whitespace-nowrap text-white text-md transition-all duration-900 delay-900 ${
                                         isSidebarVisible ? "opacity-100 visible" : "opacity-0 invisible"
                                     }`}>{menuItem.name}</div>
-                                        </button>
+                                        </Link>
                                     </li>
                                 ))}
                                 <button className={`flex items-center fixed bottom-5  transition-all duration-900 delay-900  ${

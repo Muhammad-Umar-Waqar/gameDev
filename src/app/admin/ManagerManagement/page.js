@@ -22,7 +22,7 @@ function Page() {
       const title = "Manager's List"
   return (
     <div>
-        <h1 className='text-xl font-bold my-3'>Venue Management</h1>
+        <h1 className='text-xl font-bold my-3'>Manager Management</h1>
        
         <div className='flex md:flex-row gap-2 flex-col items-center justify-around'>
         <ArcadeList arcadeList={arcadeList} title={title}/>  
