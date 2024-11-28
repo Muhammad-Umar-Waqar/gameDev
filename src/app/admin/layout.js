@@ -99,23 +99,21 @@ function Layout({ children }) {
                                         </button>
                                     </li>
                                 ))}
-                                <button className="flex items-center fixed bottom-5  ">
+                                <button className={`flex items-center fixed bottom-5  transition-all duration-900 delay-900  ${
+                                        isSidebarVisible ? "opacity-100 visible " : "opacity-0 invisible"
+                                    }`}>
                                     <Image src="/Logout.svg" height={32} width={32} className="mr-2 ml-1" />
                                     <div
-                                    className={`ms-3 whitespace-nowrap text-white transition-all duration-900 delay-900 ${
-                                        isSidebarVisible ? "opacity-100 visible" : "opacity-0 invisible"
-                                    }`}
+                                    className={`ms-3 whitespace-nowrap text-white`}
                                 >
                                     Logout
                                 </div>
-
                                 </button>
                             </div>
-                        
-                    </div>
+                       </div>
                 </aside>
             </div>
-            <div className={`${isSidebarVisible ? "ml-[270px]" : "ml-[80px]"} transition-all duration-300`} >
+            <div className={`${isSidebarVisible ? "md:ml-[270px]" : "ml-[65px]"} transition-all duration-300`} >
                 {children}
             </div>
         </div>
