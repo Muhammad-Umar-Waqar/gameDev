@@ -2,7 +2,7 @@
 
 import { useState } from 'react';
 
-export default function CustomDropdownVenue() {
+export default function DashVenues() {
   const gameOptions = [
     { id: 1, name: 'Mille Wyle' },
     { id: 2, name: 'PlayGround' },
@@ -20,23 +20,21 @@ export default function CustomDropdownVenue() {
   };
 
   return (
-    <div className="grid grid-cols-3 items-center gap-4 w-full">
+    <div className="grid grid-cols-1 items-center gap-4 w-[300px]">
       {/* Label */}
-      <label htmlFor="arcade3" className="text-left font-medium text-gray-700">
-        Select Venue
-      </label>
+     
 
       {/* Dropdown */}
       <div className="relative col-span-2">
         <div
           onClick={() => setDropdownOpen(!dropdownOpen)}
-          className={`sm:rounded-full rounded-full border border-black relative p-2 cursor-pointer bg-white`}
+          className={` rounded-lg border border-black relative p-2 cursor-pointer bg-custom-headblue`}
         >
-          <span className="text-gray-600 text-sm ">
+          <span className="text-white text-sm ">
             {selectedGame || 'Select Venue'}
           </span>
           <svg
-            className="absolute top-3 right-1 w-4 h-4 text-gray-500 inline-block float-right"
+            className="absolute top-3 right-1 w-4 h-4 text-custom-headblue bg-white rounded-md inline-block float-right"
             fill="none"
             stroke="currentColor"
             viewBox="0 0 24 24"
@@ -53,16 +51,16 @@ export default function CustomDropdownVenue() {
 
         {/* Dropdown Menu */}
         {dropdownOpen && (
-          <div className="absolute z-10 mt-1 w-full bg-white border border-gray-300 rounded-md shadow-lg">
+          <div className="absolute z-10 mt-1 w-full bg-gray-200   border border-gray-300 rounded-md shadow-lg">
             {gameOptions.map((game) => (
               <label
                 key={game.id}
-                className="block px-4 py-2 hover:bg-gray-100 cursor-pointer text-sm"
+                className="block px-4 py-2 hover:bg-gray-100 cursor-pointer text-sm text-custom-headblue "
               >
                 <input
                   type="radio"
                   name="game" // All radio buttons with the same name will work as a group (only one can be selected)
-                  className="mr-2 absolute opacity-0 pointer-events-none" 
+                  className="mr-2 absolute opacity-0 pointer-events-none  " 
                   checked={selectedGame === game.name}
                   onChange={() => handleGameSelection(game.name)} // Handle game selection
                 />
@@ -76,27 +74,3 @@ export default function CustomDropdownVenue() {
     </div>
   );
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-

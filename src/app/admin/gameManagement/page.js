@@ -1,5 +1,6 @@
+'use client'
 import ArcadeList from '@/components/admin/ArcadeList'
-import React from 'react'
+import React, { useState } from 'react'
 
 function Page() {
     const gameOptions = [
@@ -15,6 +16,14 @@ function Page() {
         { id: 10, name: 'Super Mario Bros' },
       ];
       const title = "Game's List"
+
+
+      const [game, setGame] = useState("");
+
+     function HandleGameSubmit(e){
+             e.preventDefault(); // Prevent page refresh
+            console.log("GAME", game)
+     }
   return (
     <div>
         <h1 className='text-xl font-bold my-3'>Game Management</h1>
@@ -22,7 +31,9 @@ function Page() {
         <div className='flex md:flex-row gap-2 flex-col items-center justify-around'>
         <ArcadeList arcadeList={gameOptions} title={title}/>  
         
-        <form className="sm:ml-[20px] flex flex-col items-center justify-center space-y-6 mx-2 w-[245px] sm:w-[400px] md:w-[500px] rounded-lg shadow-md bg-white p-6">
+        <form className="sm:ml-[20px]  flex flex-col items-center justify-center space-y-6 mx-2 w-[245px] sm:w-[400px] md:w-[500px] rounded-lg shadow-md bg-white p-6"
+         onSubmit={HandleGameSubmit}
+        >
             {/* Form Title */}
     <h1 className="text-start w-full text-2xl font-bold text-custom-blue mb-4">
         Add Game
@@ -38,7 +49,8 @@ function Page() {
             id="arcade1"
             name="arcade1"
             className="p-2 border border-black  focus:outline-none  rounded-full col-span-2"
-       placeholder='Enter Text' />
+            onChange={(e)=>setGame(e.target.value)}
+            placeholder='Enter Text' />
     </div>
 
     <div className="flex justify-end w-full space-x-4">

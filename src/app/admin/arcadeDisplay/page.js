@@ -4,7 +4,7 @@ import GameSelection from '@/components/admin/ArcadeDropDown';
 import ArcadeList from '@/components/admin/ArcadeList';
 import CustomDropdownVenue from '@/components/admin/VenuesDropDown';
 import Image from 'next/image';
-import React from 'react'
+import React, { useState } from 'react'
 
 function Page() {
 
@@ -20,6 +20,8 @@ function Page() {
     { id: 9, name: 'Arcade 345-554' },
     { id: 10, name: 'Arcade 345-554' },
 ];
+
+
 
 
   const title="Arcade List";
